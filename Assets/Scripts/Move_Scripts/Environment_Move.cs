@@ -12,6 +12,6 @@ public class Environment_Move : Moving_Staff
         {
             IsFree = true;
         }
-
+        
     }
 }

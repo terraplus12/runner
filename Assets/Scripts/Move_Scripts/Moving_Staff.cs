@@ -13,7 +13,7 @@ public abstract class Moving_Staff : MonoBehaviour
             Debug.LogError("Error: Object is busy");
             return;
         }
-        transform.position = pos;
+        transform.position = new Vector3(pos.x, transform.position.y, pos.z);
         IsFree = false;
 
     }

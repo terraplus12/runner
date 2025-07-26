@@ -13,7 +13,7 @@ public class Trigger_Checker : MonoBehaviour
     {
         Building_Count--;
     }
-    void FixedUpdate()
+    void Update()
     {
         if (Building_Count == 0)
         {

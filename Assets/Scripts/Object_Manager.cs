@@ -34,6 +34,7 @@ public class Object_Manager : MonoBehaviour
             {
                 print("1");
                 All_Buildings_Buffer[All_Buildings_Size - 1].Teleport(t.transform.position);
+                All_Buildings_Size--;
             }
         }
         
@@ -41,9 +42,12 @@ public class Object_Manager : MonoBehaviour
 }
     IEnumerator Object_Teleporter()
     {
-        Teleporter(All_Buildings, building);
-        Teleporter(All_Walls, obstacle);
-        yield return new WaitForSeconds(5);
+        while (true)
+        {
+            Teleporter(All_Buildings, building);
+            Teleporter(All_Walls, obstacle);
+            yield return new WaitForSeconds(5);
+        }
     }  
 
     void Start()

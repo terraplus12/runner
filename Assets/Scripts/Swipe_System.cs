@@ -93,7 +93,6 @@ public class Swipe_System: MonoBehaviour
     {
         
         swipe_Directions = Get_Swipe_Direction();
-        print (swipe_Directions);
         onSwipe();
         
 
