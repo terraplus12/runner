@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Trigger_Checker : MonoBehaviour
 {
-    public bool Is_Free { get; private set; } = true;
+    public bool Is_Free = true;
     private int Building_Count = 0;
     private void OnTriggerEnter(Collider other)
     {

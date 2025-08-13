@@ -1,12 +1,11 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-public class Button_Play_Anim : Button_Anim
+
+public class Back_To_Menu_Anim : Button_Anim
 {
     protected override void OnButtonClicked()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Main_Menu");
     }
     void Update()
     {

@@ -1,5 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
+using TMPro;
 public class Controller : MonoBehaviour
 {
     [SerializeField] private Swipe_System swipe_system;
@@ -7,8 +9,19 @@ public class Controller : MonoBehaviour
     [SerializeField] private float Move_Distance_z = 3;
     [SerializeField] private float Move_Distance_Minus_z = -3;
     [SerializeField] private float Animation_Time = 3;
+    [SerializeField] private int Coin_Count = 0;
+    [SerializeField] private TextMeshProUGUI Count_Text;
     private bool Is_Moving;
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Coin"))
+        {
+            Coin_Count++;
+            Count_Text.text = Coin_Count.ToString();
+            other.transform.GetComponent<Coin_Move>().ForceTeleport(new Vector3(47, 0, 0));
+            print("1");
+        }
+    }
     void Start()
     {
         swipe_system.up_event += Move_Up;
