@@ -1,10 +1,14 @@
 using UnityEngine;
-
+using DG.Tweening;
 public class Coin_Move : Moving_Staff
 {
+    [SerializeField] private float MoveDist_y;
+    [SerializeField] private float duration;
+    [SerializeField] private float rotation;
     protected override void Move()
     {
-        transform.position += vector * speed * Time.deltaTime;
+        transform.position += vector * speed * Time.deltaTime * GameSettings.speed;
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -12,5 +16,10 @@ public class Coin_Move : Moving_Staff
         {
             IsFree = true;
         }
+    }
+    void Start()
+    {
+        transform.DOMoveY(transform.position.y + MoveDist_y, duration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+        transform.DORotate(new Vector3(360, 0, 0), rotation, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart).SetEase(Ease.Linear);
     }
 }

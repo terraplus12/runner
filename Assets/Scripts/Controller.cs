@@ -9,15 +9,15 @@ public class Controller : MonoBehaviour
     [SerializeField] private float Move_Distance_z = 3;
     [SerializeField] private float Move_Distance_Minus_z = -3;
     [SerializeField] private float Animation_Time = 3;
-    [SerializeField] private int Coin_Count = 0;
+    [SerializeField] private ProgressSaver saver;
     [SerializeField] private TextMeshProUGUI Count_Text;
     private bool Is_Moving;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Coin"))
         {
-            Coin_Count++;
-            Count_Text.text = Coin_Count.ToString();
+            saver.data.CoinCount++;
+            Count_Text.text = saver.data.CoinCount.ToString();
             other.transform.GetComponent<Coin_Move>().ForceTeleport(new Vector3(47, 0, 0));
             print("1");
         }
@@ -28,6 +28,7 @@ public class Controller : MonoBehaviour
         swipe_system.down_event += Move_Down;
         swipe_system.right_event += Move_Right;
         swipe_system.left_event += Move_Left;
+        Count_Text.text = saver.data.CoinCount.ToString();
     }
     private void Move_Up()
     {

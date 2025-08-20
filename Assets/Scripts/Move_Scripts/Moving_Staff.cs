@@ -4,10 +4,10 @@ public abstract class Moving_Staff : MonoBehaviour
 {
     [SerializeField] protected Vector3 vector;
     [SerializeField] protected float speed;
-    [SerializeField] private Vector3 Offset;
+    [SerializeField] protected Vector3 Offset;
     [SerializeField] public bool IsFree { get; protected set; } = true;
     protected abstract void Move();
-    public void Teleport(Vector3 pos)
+    public virtual void Teleport(Vector3 pos, int RoadIndex)
     {
         if (IsFree == false)
         {
@@ -24,12 +24,6 @@ public abstract class Moving_Staff : MonoBehaviour
       
 
     }
-
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {

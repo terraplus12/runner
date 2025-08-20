@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vector: {x: 1, y: 0, z: 0}
   speed: 2.5
-  Offset: {x: 0, y: 1, z: 0}
+  Offset: {x: 0, y: 0, z: 0}
 --- !u!65 &7466772659462807736
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68,8 +68,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6192093, y: 0.9804423, z: 1.2016892}
-  m_Center: {x: 1.0106735, y: 1.3962623, z: -0.015957832}
+  m_Size: {x: 0.29697895, y: 0.9410813, z: 1.2016892}
+  m_Center: {x: -0.025064945, y: 0.3966571, z: -0.015957832}
 --- !u!1001 &3759745798558123439
 PrefabInstance:
   m_ObjectHideFlags: 0
