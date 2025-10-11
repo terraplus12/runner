@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7466772659462807736}
   m_Layer: 0
   m_Name: Main Fence
-  m_TagString: Untagged
+  m_TagString: Stop_Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

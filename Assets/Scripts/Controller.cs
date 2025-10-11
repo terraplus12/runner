@@ -11,6 +11,8 @@ public class Controller : MonoBehaviour
     [SerializeField] private float Animation_Time = 3;
     [SerializeField] private ProgressSaver saver;
     [SerializeField] private TextMeshProUGUI Count_Text;
+    [SerializeField] private MusicManager MusicPlay;
+    [SerializeField] private Animator PlayerAnim;
     private bool Is_Moving;
     private void OnTriggerEnter(Collider other)
     {
@@ -19,7 +21,12 @@ public class Controller : MonoBehaviour
             saver.data.CoinCount++;
             Count_Text.text = saver.data.CoinCount.ToString();
             other.transform.GetComponent<Coin_Move>().ForceTeleport(new Vector3(47, 0, 0));
+            MusicPlay.PlayCoinAudio();
             print("1");
+        }
+        if (other.CompareTag("Stop_Fence"))
+        {
+            MusicPlay.PlayObstacleAudio();
         }
     }
     void Start()
@@ -29,6 +36,7 @@ public class Controller : MonoBehaviour
         swipe_system.right_event += Move_Right;
         swipe_system.left_event += Move_Left;
         Count_Text.text = saver.data.CoinCount.ToString();
+        PlayerAnim.speed = 0.7f;
     }
     private void Move_Up()
     {

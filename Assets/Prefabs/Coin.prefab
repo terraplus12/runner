@@ -126,4 +126,4 @@ MonoBehaviour:
   Offset: {x: 0, y: 0, z: 0}
   MoveDist_y: 1
   duration: 1
-  rotation: 1
+  rotation: 2

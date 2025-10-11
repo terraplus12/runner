@@ -20,6 +20,6 @@ public class Coin_Move : Moving_Staff
     void Start()
     {
         transform.DOMoveY(transform.position.y + MoveDist_y, duration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
-        transform.DORotate(new Vector3(360, 0, 0), rotation, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart).SetEase(Ease.Linear);
+        transform.DORotate(new Vector3(360, 0, 0), rotation, RotateMode.LocalAxisAdd).SetLoops(-1, LoopType.Restart).SetEase(Ease.Linear);
     }
 }
