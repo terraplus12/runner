@@ -18,6 +18,7 @@ public class SkinInfo
 }
 public class Skin : MonoBehaviour
 {
+    [SerializeField] private ButtInterface butt;
     [SerializeField] private SkinInfo SkinInf;
     [SerializeField] private Transform PosPoint;
     [SerializeField] private string ModelName;
@@ -48,6 +49,9 @@ public class Skin : MonoBehaviour
             Spawned.transform.SetParent(PosPoint);
             Spawned.transform.localRotation = Quaternion.identity;
             Spawned.transform.AddComponent<CharacterView>();
+            if (SkinInf.Skin == SkinStatus.Unbought) butt.EnableButton(SkinInf.Price.ToString());
+            else if (SkinInf.Skin == SkinStatus.Bought) butt.EnableButton("has bought");
+            else butt.EnableButton("Chase");
         }
     }
     void Start()
